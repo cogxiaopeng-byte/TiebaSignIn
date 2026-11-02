@@ -132,7 +132,7 @@ class TiebaClient:
         if result is None:
             logger.error("获取 tbs 失败")
             return None
-        self.logged_in = result.get("is_login") == "1"
+        self.logged_in = str(result.get("is_login")) == "1"
         if not self.logged_in:
             logger.warning("BDUSS 登录状态异常: is_login=%s", result.get("is_login"))
         return result.get("tbs", "")

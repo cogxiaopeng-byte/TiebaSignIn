@@ -163,7 +163,7 @@ def send_pushplus(
             "template": "html",
         }
         client = http or requests
-        r = client.get("http://www.pushplus.plus/send", params=payload, timeout=10)
+        r = client.post("https://www.pushplus.plus/send", json=payload, timeout=10)
         logger.info(f"PushPlus 响应: {r.text[:100]}")
         return True
     except Exception as e:

@@ -158,7 +158,7 @@ def send_pushplus(
     try:
         payload = {
             "token": token,
-            "title": "贴吧签到结果",
+            "title": f"贴吧签到结果 · {os.environ.get('ACCOUNT_LABEL', '账号1')}",
             "content": content,
             "template": "html",
         }
